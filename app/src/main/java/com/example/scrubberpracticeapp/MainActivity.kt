@@ -5,6 +5,9 @@ import android.os.Bundle
 import android.view.Menu
 
 import android.view.MenuItem
+import android.widget.Button
+import android.widget.EditText
+import android.widget.TextView
 import android.widget.Toast
 import androidx.appcompat.widget.Toolbar
 
@@ -14,7 +17,18 @@ class MainActivity : AppCompatActivity() {
         setContentView(R.layout.activity_main)
 
         val tb = findViewById<Toolbar>(R.id.toolbar)
+        val tv = findViewById<TextView>(R.id.textView)
+        val sn = findViewById<Button>(R.id.button)
         setSupportActionBar(tb)
+
+        sn.setOnClickListener {
+            tv.setText("John Doe")
+        }
+        val editText = findViewById<EditText>(R.id.editTextText)
+        val sw = findViewById<Button>(R.id.button2)
+        sw.setOnClickListener {
+            Toast.makeText(this,editText.text,Toast.LENGTH_LONG).show()
+        }
 
     }
 
